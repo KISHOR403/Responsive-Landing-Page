@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sticky Navbar | Kishor Gogoi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#">Kishor Gogoi</a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="banner"></div>
+  <div class="about">
+    <div class="content">
+      <div class="title">Responsive Sticky Navigation Menu Bar on Scroll using HTML CSS & JavaScript</div>
+      <p>1. What is a Sticky Navigation Menu? <br>
+        A sticky navigation menu (or "sticky navbar") is a menu that stays fixed at the top of the webpage even when the user scrolls down. This allows users to access the navigation easily from any point on the page, improving the overall user experience. It remains "stuck" at the top while scrolling, hence the name "sticky."</p>
+      <p>2. Key Features of a Sticky Navbar: <br>
+        Fixed positioning: The navbar stays at the top of the viewport.
+        Scroll-triggered effects: The navbar can change styles (e.g., color, size) when the user scrolls.
+        Responsiveness: The navbar adjusts to different screen sizes for mobile, tablet, and desktop views.
+        Hover effects: Adds an interactive touch, highlighting links when hovered.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet veniam error deleniti cum beatae non assumenda illum est dolores, possimus suscipit quibusdam eveniet id fuga dolore unde modi, sapiente voluptas. Mollitia veritatis explicabo cumque enim quia voluptates provident totam perferendis excepturi animi assumenda optio minus laudantium eveniet possimus amet blanditiis dolore in fuga atque, earum officia tempora quam similique est.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ad sunt distinctio quidem incidunt cupiditate sequi deleniti, corrupti officia nam veritatis facilis veniam dolorum enim nisi ipsum dolor rem! Doloribus, eaque odit voluptatem iste laboriosam provident facere quo. Cum repellat pariatur, error ratione repellendus nisi quam culpa tempora facere in atque nesciunt, magni est aliquid unde soluta optio! Dolore pariatur, quaerat quo in cupiditate deleniti exercitationem. Facilis suscipit corporis unde aut minima nihil, eum molestias itaque, tenetur, beatae ipsa at!</p>
+    </div>
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+
+</body>
+</html>
